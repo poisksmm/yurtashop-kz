@@ -1,0 +1,296 @@
+/* YURTA Corporate Website Styles */
+
+/* CSS reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f5ef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --primary: #705438;      /* rich brown reminiscent of natural wood */
+  --secondary: #e3d8c3;    /* warm beige for backgrounds */
+  --accent: #2f4f4f;       /* dark slate for headings */
+  --light: #fdfaf5;        /* very light background */
+  --transition: all 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: var(--light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  font-size: 1rem;
+  padding: 0.25rem;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.lang-switch button {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: var(--transition);
+}
+
+.lang-switch button.active,
+.lang-switch button:hover {
+  background-color: #8b6a4b;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: #8b6a4b;
+}
+
+/* Section styles */
+section {
+  padding: 4rem 2rem;
+  background-color: var(--light);
+}
+
+section:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  background-color: var(--light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Catalog cards */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Catalog category wrapper */
+.catalog-category {
+  margin-bottom: 3rem;
+}
+
+/* Category title styles */
+.category-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.product-card {
+  background-color: var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card .card-content {
+  padding: 1rem;
+}
+
+.product-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.product-card .price {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Language visibility */
+.lang-kz {
+  display: none;
+}
+
+.lang-visible .lang-en,
+.lang-visible .lang-kz {
+  display: block;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+}
